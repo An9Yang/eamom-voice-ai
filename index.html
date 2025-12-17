@@ -1,0 +1,1071 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Eamom Voice AI - AI语音点餐系统 | 帮助餐厅省人、省时、增营收</title>
+    <meta name="description" content="面向中餐及亚洲餐厅的AI语音点餐系统，自动接听电话、中英双语识别、每年节省$29,000人工成本">
+    <meta name="theme-color" content="#1E6C7E">
+    <link rel="icon" href="iorder.png">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <!-- Navigation -->
+    <nav class="nav" id="nav">
+        <div class="nav-container">
+            <a class="nav-logo" href="#hero" aria-label="Eamom Voice AI">
+                <img class="logo-img" src="iorder.png" alt="Eamom Voice AI Logo">
+                <span class="logo-text">Eamom <span class="logo-highlight">Voice AI</span></span>
+            </a>
+            <div class="nav-links">
+                <a href="#solution">解决方案</a>
+                <a href="#how-it-works">如何运作</a>
+                <a href="#pricing">成本对比</a>
+                <a href="#faq">常见问题</a>
+                <a href="#contact" class="nav-cta">免费试用</a>
+            </div>
+            <button class="nav-toggle" id="navToggle">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero" id="hero">
+        <div class="hero-bg">
+            <div class="hero-gradient"></div>
+            <div class="hero-pattern"></div>
+        </div>
+        <div class="hero-container">
+            <div class="hero-content">
+                <div class="hero-badge">
+                    <span class="badge-dot"></span>
+                    面向中餐及亚洲餐厅
+                </div>
+                <h1 class="hero-title">
+                    <span class="title-line">用 <span class="highlight">AI 语音</span></span>
+                    <span class="title-line">自动接电话点餐</span>
+                </h1>
+                <p class="hero-subtitle">
+                    帮助餐厅<span class="text-accent">省人</span>、<span class="text-accent">省时</span>、<span class="text-accent">增营收</span>
+                </p>
+                <ul class="hero-features">
+                    <li>自动接听所有来电（高峰期支持多路并发）</li>
+                    <li>中英双语识别菜单与加料逻辑，减少漏问与重复确认</li>
+                    <li>采集地址与备注，自动写入 POS / 外卖平台</li>
+                    <li>订单短信确认（可扩展 text-to-pay）</li>
+                </ul>
+                <p class="hero-proof"><strong>每年为您节省约 $29,000 人工成本</strong></p>
+                <div class="hero-cta">
+                    <a href="#contact" class="btn btn-primary">
+                        <span>预约演示</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M5 12h14M12 5l7 7-7 7"/>
+                        </svg>
+                    </a>
+                    <a href="#how-it-works" class="btn btn-secondary">
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <circle cx="12" cy="12" r="10"/>
+                            <polygon points="10 8 16 12 10 16 10 8" fill="currentColor"/>
+                        </svg>
+                        <span>观看演示</span>
+                    </a>
+                </div>
+                <div class="hero-stats">
+                    <div class="stat-item">
+                        <span class="stat-number">$29K+</span>
+                        <span class="stat-label">年节省成本</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">24/7</span>
+                        <span class="stat-label">全天候接听</span>
+                    </div>
+                    <div class="stat-divider"></div>
+                    <div class="stat-item">
+                        <span class="stat-number">0</span>
+                        <span class="stat-label">漏接电话</span>
+                    </div>
+                </div>
+            </div>
+            <div class="hero-visual">
+                <div class="demo-container">
+                    <!-- Interactive Demo Animation -->
+                    <div class="demo-scene">
+                        <!-- Phone Device -->
+                        <div class="device phone-device" id="phoneDevice">
+                            <div class="phone-screen">
+                                <div class="phone-header">
+                                    <span class="phone-time">12:30</span>
+                                    <div class="phone-notch"></div>
+                                    <div class="phone-icons">
+                                        <span class="signal"></span>
+                                        <span class="wifi"></span>
+                                        <span class="battery"></span>
+                                    </div>
+                                </div>
+                                <div class="call-interface" id="callInterface">
+                                    <div class="caller-avatar">
+                                        <svg viewBox="0 0 60 60">
+                                            <circle cx="30" cy="30" r="28" fill="#1E6C7E" opacity="0.2"/>
+                                            <circle cx="30" cy="24" r="10" fill="#1E6C7E"/>
+                                            <path d="M12 50c0-10 8-16 18-16s18 6 18 16" fill="#1E6C7E"/>
+                                        </svg>
+                                    </div>
+                                    <div class="caller-info">
+                                        <span class="caller-name">顾客来电</span>
+                                        <span class="caller-number">+1 (415) 888-****</span>
+                                    </div>
+                                    <div class="call-status">
+                                        <span class="status-dot"></span>
+                                        <span id="callStatusText">来电中...</span>
+                                    </div>
+                                    <div class="call-wave" id="callWave">
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                        <span></span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- AI Agent -->
+                        <div class="ai-agent" id="aiAgent">
+                            <div class="ai-avatar">
+                                <svg viewBox="0 0 80 80">
+                                    <defs>
+                                        <linearGradient id="aiGradient" x1="0%" y1="0%" x2="100%" y2="100%">
+                                            <stop offset="0%" style="stop-color:#1E6C7E"/>
+                                            <stop offset="100%" style="stop-color:#FFC000"/>
+                                        </linearGradient>
+                                    </defs>
+                                    <circle cx="40" cy="40" r="38" fill="url(#aiGradient)"/>
+                                    <circle cx="28" cy="35" r="5" fill="white"/>
+                                    <circle cx="52" cy="35" r="5" fill="white"/>
+                                    <path d="M28 50 Q40 60 52 50" stroke="white" stroke-width="3" fill="none" stroke-linecap="round"/>
+                                </svg>
+                                <div class="ai-pulse"></div>
+                            </div>
+                            <div class="ai-speech-bubble" id="aiBubble">
+                                <span id="aiText">您好！欢迎致电金龙餐厅，请问需要点什么？</span>
+                            </div>
+                        </div>
+
+                        <!-- POS Terminal -->
+                        <div class="device pos-device" id="posDevice">
+                            <div class="pos-screen">
+                                <div class="pos-header">
+                                    <span class="pos-title">Tiger POS</span>
+                                    <span class="pos-status">在线</span>
+                                </div>
+                                <div class="pos-content" id="posContent">
+                                    <div class="order-item" style="opacity: 0">
+                                        <span class="item-name">左宗棠鸡 (大)</span>
+                                        <span class="item-price">$15.99</span>
+                                    </div>
+                                    <div class="order-item" style="opacity: 0">
+                                        <span class="item-name">扬州炒饭</span>
+                                        <span class="item-price">$12.99</span>
+                                    </div>
+                                    <div class="order-item" style="opacity: 0">
+                                        <span class="item-name">酸辣汤</span>
+                                        <span class="item-price">$6.99</span>
+                                    </div>
+                                    <div class="order-total" style="opacity: 0">
+                                        <span>总计</span>
+                                        <span>$35.97</span>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+
+                        <!-- Connection Lines -->
+                        <svg class="connection-lines" viewBox="0 0 600 400">
+                            <defs>
+                                <linearGradient id="lineGradient" x1="0%" y1="0%" x2="100%" y2="0%">
+                                    <stop offset="0%" style="stop-color:#1E6C7E;stop-opacity:0"/>
+                                    <stop offset="50%" style="stop-color:#1E6C7E;stop-opacity:1"/>
+                                    <stop offset="100%" style="stop-color:#1E6C7E;stop-opacity:0"/>
+                                </linearGradient>
+                            </defs>
+                            <path class="connection-path path-1" d="M120 200 Q200 200 240 200" stroke="url(#lineGradient)" stroke-width="2" fill="none"/>
+                            <path class="connection-path path-2" d="M360 200 Q440 200 480 200" stroke="url(#lineGradient)" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+
+                    <!-- Demo Steps Indicator -->
+                    <div class="demo-steps">
+                        <div class="step active" data-step="1">
+                            <span class="step-num">1</span>
+                            <span class="step-text">来电</span>
+                        </div>
+                        <div class="step" data-step="2">
+                            <span class="step-num">2</span>
+                            <span class="step-text">AI接听</span>
+                        </div>
+                        <div class="step" data-step="3">
+                            <span class="step-num">3</span>
+                            <span class="step-text">点餐对话</span>
+                        </div>
+                        <div class="step" data-step="4">
+                            <span class="step-num">4</span>
+                            <span class="step-text">订单入系统</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+        <div class="scroll-indicator">
+            <span>向下滚动</span>
+            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                <path d="M12 5v14M5 12l7 7 7-7"/>
+            </svg>
+        </div>
+    </section>
+
+    <!-- Trust Strip -->
+    <section class="trust" aria-label="Integrations and trust">
+        <div class="container">
+            <div class="trust-inner">
+                <span class="trust-label">已适配主流 POS / 外卖平台</span>
+                <div class="trust-pills">
+                    <span class="trust-pill">Tiger POS</span>
+                    <span class="trust-pill">RestPOS</span>
+                    <span class="trust-pill">外卖平台</span>
+                    <span class="trust-pill">短信确认</span>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pain Points Section -->
+    <section class="pain-points" id="pain-points">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">餐厅老板的困扰</span>
+                <h2 class="section-title">您是否也面临这些问题？</h2>
+            </div>
+            <div class="pain-grid">
+                <div class="pain-card" data-aos="fade-up">
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="16" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M8 42c0-8.8 7.2-16 16-16s16 7.2 16 16" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M38 8l-6 6M38 14l-6-6" stroke="#FF4444" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="pain-title">招人难</h3>
+                    <p class="pain-desc">接电话岗位流动性高，平均在职仅 <strong>3-5个月</strong>，一年要换 <strong>3次人</strong></p>
+                    <div class="pain-stat">
+                        <span class="stat-highlight">$1,450</span>
+                        <span>每次招聘+培训成本</span>
+                    </div>
+                </div>
+                <div class="pain-card" data-aos="fade-up" data-aos-delay="100">
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M24 14v10l6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M16 8l-4-4M32 8l4-4" stroke="#FF4444" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="pain-title">培训烦</h3>
+                    <p class="pain-desc">菜单40-120个菜品、POS操作、外卖平台、话术规范，培训周期 <strong>1周+</strong></p>
+                    <div class="pain-stat">
+                        <span class="stat-highlight">$1,200</span>
+                        <span>每人培训成本</span>
+                    </div>
+                </div>
+                <div class="pain-card" data-aos="fade-up" data-aos-delay="200">
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 48 48">
+                            <rect x="10" y="8" width="20" height="32" rx="3" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="20" cy="35" r="2" fill="currentColor"/>
+                            <path d="M32 16l8-8M40 16l-8-8" stroke="#FF4444" stroke-width="2.5" stroke-linecap="round"/>
+                            <path d="M14 14h12M14 20h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3 class="pain-title">漏单多</h3>
+                    <p class="pain-desc">高峰期电话占线，员工忙不过来，顾客等不及就挂断，<strong>订单白白流失</strong></p>
+                    <div class="pain-stat">
+                        <span class="stat-highlight">15-20%</span>
+                        <span>高峰期漏接率</span>
+                    </div>
+                </div>
+                <div class="pain-card" data-aos="fade-up" data-aos-delay="300">
+                    <div class="pain-icon">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M12 36V20a12 12 0 1 1 24 0v16" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <rect x="8" y="36" width="32" height="6" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M18 20v-2a6 6 0 1 1 12 0v2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <text x="24" y="30" text-anchor="middle" font-size="12" fill="currentColor">$</text>
+                        </svg>
+                    </div>
+                    <h3 class="pain-title">成本高</h3>
+                    <p class="pain-desc">一个接电话岗位的真实年度成本，加上流动损耗高达</p>
+                    <div class="pain-stat">
+                        <span class="stat-highlight">$42,000-45,000</span>
+                        <span>/年</span>
+                    </div>
+                </div>
+            </div>
+            <div class="pain-summary">
+                <div class="summary-icon">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M12 22c5.523 0 10-4.477 10-10S17.523 2 12 2 2 6.477 2 12s4.477 10 10 10z"/>
+                        <path d="M12 8v4M12 16h.01"/>
+                    </svg>
+                </div>
+                <p>一个"接电话岗位"不仅是工资 $37,000，而是加上招聘、培训、流动损耗后的 <strong>$42,000-45,000/年</strong></p>
+            </div>
+        </div>
+    </section>
+
+    <!-- Solution Section -->
+    <section class="solution" id="solution">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">Eamom 解决方案</span>
+                <h2 class="section-title">让 AI 帮您接电话、记订单、进系统</h2>
+                <p class="section-subtitle">老板和员工专心做出餐和服务顾客</p>
+            </div>
+
+            <div class="solution-visual">
+                <div class="flow-container">
+                    <div class="flow-step" data-step="1">
+                        <div class="flow-icon">
+                            <svg viewBox="0 0 64 64">
+                                <rect x="16" y="8" width="32" height="48" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="32" cy="50" r="3" fill="currentColor"/>
+                                <path d="M24 16h16M24 24h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="32" cy="36" r="8" stroke="#1E6C7E" stroke-width="2" fill="none">
+                                    <animate attributeName="r" values="8;10;8" dur="1s" repeatCount="indefinite"/>
+                                </circle>
+                                <path d="M29 33l-3 3 3 3M35 33l3 3-3 3" stroke="#1E6C7E" stroke-width="2" stroke-linecap="round" fill="none"/>
+                            </svg>
+                        </div>
+                        <h4>顾客来电</h4>
+                        <p>顾客拨打餐厅电话</p>
+                    </div>
+                    <div class="flow-arrow">
+                        <svg viewBox="0 0 40 24">
+                            <path d="M0 12h32M24 4l8 8-8 8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="flow-step" data-step="2">
+                        <div class="flow-icon ai-icon">
+                            <svg viewBox="0 0 64 64">
+                                <circle cx="32" cy="32" r="24" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="24" cy="28" r="4" fill="currentColor"/>
+                                <circle cx="40" cy="28" r="4" fill="currentColor"/>
+                                <path d="M24 40 Q32 48 40 40" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                <circle cx="32" cy="32" r="28" stroke="#1E6C7E" stroke-width="1" fill="none" opacity="0.3">
+                                    <animate attributeName="r" values="28;32;28" dur="2s" repeatCount="indefinite"/>
+                                    <animate attributeName="opacity" values="0.3;0;0.3" dur="2s" repeatCount="indefinite"/>
+                                </circle>
+                            </svg>
+                        </div>
+                        <h4>AI 自动接听</h4>
+                        <p>中英双语智能对话</p>
+                    </div>
+                    <div class="flow-arrow">
+                        <svg viewBox="0 0 40 24">
+                            <path d="M0 12h32M24 4l8 8-8 8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="flow-step" data-step="3">
+                        <div class="flow-icon">
+                            <svg viewBox="0 0 64 64">
+                                <rect x="8" y="12" width="48" height="40" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M8 24h48" stroke="currentColor" stroke-width="2"/>
+                                <circle cx="16" cy="18" r="2" fill="#FF4444"/>
+                                <circle cx="24" cy="18" r="2" fill="#FFC000"/>
+                                <circle cx="32" cy="18" r="2" fill="#4CAF50"/>
+                                <path d="M16 32h20M16 40h12M16 48h16" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M44 36l-8 8-4-4" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" fill="none"/>
+                            </svg>
+                        </div>
+                        <h4>订单确认</h4>
+                        <p>菜品、地址、备注一次确认</p>
+                    </div>
+                    <div class="flow-arrow">
+                        <svg viewBox="0 0 40 24">
+                            <path d="M0 12h32M24 4l8 8-8 8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="flow-step" data-step="4">
+                        <div class="flow-icon">
+                            <svg viewBox="0 0 64 64">
+                                <rect x="8" y="8" width="48" height="48" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <rect x="16" y="16" width="32" height="24" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <rect x="16" y="46" width="8" height="4" rx="1" fill="currentColor"/>
+                                <rect x="28" y="46" width="8" height="4" rx="1" fill="currentColor"/>
+                                <rect x="40" y="46" width="8" height="4" rx="1" fill="currentColor"/>
+                                <path d="M24 24l4 4 8-8" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" fill="none"/>
+                            </svg>
+                        </div>
+                        <h4>写入 POS</h4>
+                        <p>自动落单无需二次输入</p>
+                    </div>
+                    <div class="flow-arrow">
+                        <svg viewBox="0 0 40 24">
+                            <path d="M0 12h32M24 4l8 8-8 8" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="flow-step" data-step="5">
+                        <div class="flow-icon">
+                            <svg viewBox="0 0 64 64">
+                                <rect x="16" y="8" width="32" height="48" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="32" cy="50" r="3" fill="currentColor"/>
+                                <rect x="22" y="20" width="20" height="24" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M26 26h12M26 32h8M26 38h10" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                                <path d="M32 16v-4" stroke="#4CAF50" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="32" cy="8" r="3" stroke="#4CAF50" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <h4>短信确认</h4>
+                        <p>顾客收到订单确认短信</p>
+                    </div>
+                </div>
+            </div>
+
+            <div class="features-grid">
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M24 4C12.95 4 4 12.95 4 24s8.95 20 20 20 20-8.95 20-20S35.05 4 24 4z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M16 24c0-4.4 3.6-8 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M12 24c0-6.6 5.4-12 12-12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <circle cx="24" cy="24" r="4" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <h3>自动接听 & 排队</h3>
+                    <p>营业时间内自动接听所有来电，高峰期支持多路并发，避免占线或漏接</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="16" cy="16" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="32" cy="16" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <text x="16" y="20" text-anchor="middle" font-size="10" fill="currentColor">中</text>
+                            <text x="32" y="20" text-anchor="middle" font-size="8" fill="currentColor">EN</text>
+                            <path d="M16 28v8c0 4.4 3.6 8 8 8s8-3.6 8-8v-8" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>中英双语对话</h3>
+                    <p>支持普通话/粤语口音的英文混说，按门店菜单训练专属词表</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 48 48">
+                            <rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M8 16h32M16 16v24M32 16v24" stroke="currentColor" stroke-width="2"/>
+                            <circle cx="24" cy="28" r="4" fill="currentColor"/>
+                            <path d="M24 24v-4M24 32v4M20 28h-4M28 28h4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>菜单深度理解</h3>
+                    <p>深度对接门店菜单结构，自动询问规格、辣度、饮料选择等</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M24 4l4 8h8l-6 6 2 8-8-4-8 4 2-8-6-6h8z" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <circle cx="24" cy="32" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M20 32h8M24 28v8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>地址智能采集</h3>
+                    <p>引导顾客报地址/门牌号，支持常用地址记忆与复用</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 48 48">
+                            <rect x="4" y="12" width="18" height="28" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <rect x="26" y="8" width="18" height="32" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M22 24h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="2 2"/>
+                            <path d="M8 18h10M8 24h6M8 30h8" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                            <path d="M30 16h10M30 22h6M30 28h8M30 34h6" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <h3>POS/平台集成</h3>
+                    <p>对接主流华人POS（Tiger/RestPOS）和外卖平台，自动落单</p>
+                </div>
+                <div class="feature-card">
+                    <div class="feature-icon">
+                        <svg viewBox="0 0 48 48">
+                            <rect x="8" y="8" width="32" height="32" rx="4" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M8 16h32" stroke="currentColor" stroke-width="2"/>
+                            <path d="M16 24h16M16 30h10M16 36h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            <path d="M36 28l-6 6-3-3" stroke="#4CAF50" stroke-width="2" stroke-linecap="round" fill="none"/>
+                        </svg>
+                    </div>
+                    <h3>短信确认</h3>
+                    <p>订单完成后自动发送确认短信，后续可扩展在线支付</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- How It Works Section -->
+    <section class="how-it-works" id="how-it-works">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">简单上线</span>
+                <h2 class="section-title">4 步即可上线，无需改动现有系统</h2>
+                <p class="section-subtitle">从签约到正式运行，最快 7 天</p>
+            </div>
+
+            <div class="timeline">
+                <div class="timeline-item" data-step="1">
+                    <div class="timeline-marker">
+                        <span>1</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <svg viewBox="0 0 48 48">
+                                <rect x="8" y="6" width="32" height="36" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M16 14h16M16 22h12M16 30h14M16 38h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M36 18l-4 4-2-2" stroke="#1E6C7E" stroke-width="2" stroke-linecap="round" fill="none"/>
+                            </svg>
+                        </div>
+                        <h3>收集信息</h3>
+                        <p>提供菜单、营业时间和现有接单流程（电话 + POS / 外卖平台）</p>
+                        <span class="timeline-duration">Day 1-2</span>
+                    </div>
+                </div>
+                <div class="timeline-item" data-step="2">
+                    <div class="timeline-marker">
+                        <span>2</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <svg viewBox="0 0 48 48">
+                                <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="18" cy="20" r="3" fill="currentColor"/>
+                                <circle cx="30" cy="20" r="3" fill="currentColor"/>
+                                <path d="M18 30 Q24 36 30 30" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                                <path d="M24 4v4M4 24h4M44 24h-4M24 44v-4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>生成专属 Agent</h3>
+                        <p>根据您的菜单生成门店专属语音 Agent，进行话术微调</p>
+                        <span class="timeline-duration">Day 3-4</span>
+                    </div>
+                </div>
+                <div class="timeline-item" data-step="3">
+                    <div class="timeline-marker">
+                        <span>3</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <svg viewBox="0 0 48 48">
+                                <rect x="12" y="8" width="24" height="32" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="24" cy="36" r="2" fill="currentColor"/>
+                                <path d="M18 16h12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="24" cy="24" r="6" stroke="#1E6C7E" stroke-width="2" fill="none"/>
+                                <path d="M24 21v6M21 24h6" stroke="#1E6C7E" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>绑定电话试运行</h3>
+                        <p>绑定门店电话（转接或 SIP），开启试运行模式，员工可旁听纠正</p>
+                        <span class="timeline-duration">Day 5-6</span>
+                    </div>
+                </div>
+                <div class="timeline-item" data-step="4">
+                    <div class="timeline-marker">
+                        <span>4</span>
+                    </div>
+                    <div class="timeline-content">
+                        <div class="timeline-icon">
+                            <svg viewBox="0 0 48 48">
+                                <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M16 24l6 6 12-12" stroke="#4CAF50" stroke-width="3" stroke-linecap="round" fill="none"/>
+                            </svg>
+                        </div>
+                        <h3>正式上线</h3>
+                        <p>稳定后切换为正式模式，按月结算，提供 7×12 小时在线支持</p>
+                        <span class="timeline-duration">Day 7+</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="guarantee-box">
+                <div class="guarantee-icon">
+                    <svg viewBox="0 0 48 48">
+                        <circle cx="24" cy="24" r="20" stroke="currentColor" stroke-width="2" fill="none"/>
+                        <path d="M24 12v24M16 20l8-8 8 8" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                    </svg>
+                </div>
+                <div class="guarantee-content">
+                    <h3>7-14 天免费试用</h3>
+                    <p>试用期间只为成功订单付费，不满意随时取消，零风险体验</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Pricing/ROI Section -->
+    <section class="pricing" id="pricing">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">成本对比</span>
+                <h2 class="section-title">每年节省 $29,000+ 真金白银</h2>
+                <p class="section-subtitle">不仅省钱，更省心</p>
+            </div>
+
+            <div class="comparison-container">
+                <div class="comparison-card human">
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 48 48">
+                                <circle cx="24" cy="14" r="8" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M8 42c0-8.8 7.2-16 16-16s16 7.2 16 16" stroke="currentColor" stroke-width="2" fill="none"/>
+                            </svg>
+                        </div>
+                        <h3>人工接电话</h3>
+                        <span class="card-label">传统方式</span>
+                    </div>
+                    <div class="card-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">43,500</span>
+                        <span class="price-period">/年</span>
+                    </div>
+                    <ul class="card-features">
+                        <li>
+                            <svg viewBox="0 0 20 20"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                            基本工资 $37,440/年
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                            招聘成本 $390/次
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                            培训成本 $1,200/人
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20"><path d="M4 10l4 4 8-8" stroke="currentColor" stroke-width="2" fill="none"/></svg>
+                            年度流动损耗 $4,350
+                        </li>
+                    </ul>
+                    <div class="card-downsides">
+                        <h4>额外困扰</h4>
+                        <ul>
+                            <li>平均在职仅 3-5 个月</li>
+                            <li>高峰期漏接电话</li>
+                            <li>话术不统一</li>
+                            <li>需持续招聘培训</li>
+                        </ul>
+                    </div>
+                </div>
+
+                <div class="comparison-vs">
+                    <span>VS</span>
+                </div>
+
+                <div class="comparison-card ai featured">
+                    <div class="card-badge">推荐</div>
+                    <div class="card-header">
+                        <div class="card-icon">
+                            <svg viewBox="0 0 48 48">
+                                <circle cx="24" cy="24" r="16" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <circle cx="18" cy="20" r="3" fill="currentColor"/>
+                                <circle cx="30" cy="20" r="3" fill="currentColor"/>
+                                <path d="M18 30 Q24 36 30 30" stroke="currentColor" stroke-width="2" fill="none" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h3>Eamom AI</h3>
+                        <span class="card-label">智能方案</span>
+                    </div>
+                    <div class="card-price">
+                        <span class="price-currency">$</span>
+                        <span class="price-amount">14,400</span>
+                        <span class="price-period">/年</span>
+                    </div>
+                    <div class="monthly-price">约 $1,200/月</div>
+                    <ul class="card-features">
+                        <li>
+                            <svg viewBox="0 0 20 20"><path d="M4 10l4 4 8-8" stroke="#4CAF50" stroke-width="2" fill="none"/></svg>
+                            24/7 全天候接听
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20"><path d="M4 10l4 4 8-8" stroke="#4CAF50" stroke-width="2" fill="none"/></svg>
+                            零漏单零占线
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20"><path d="M4 10l4 4 8-8" stroke="#4CAF50" stroke-width="2" fill="none"/></svg>
+                            中英双语服务
+                        </li>
+                        <li>
+                            <svg viewBox="0 0 20 20"><path d="M4 10l4 4 8-8" stroke="#4CAF50" stroke-width="2" fill="none"/></svg>
+                            自动写入 POS
+                        </li>
+                    </ul>
+                    <div class="card-benefits">
+                        <h4>额外收益</h4>
+                        <ul>
+                            <li>无需招聘培训</li>
+                            <li>话术永远标准</li>
+                            <li>高峰不漏单</li>
+                            <li>老板更省心</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+
+            <div class="savings-highlight">
+                <div class="savings-content">
+                    <div class="savings-icon">
+                        <svg viewBox="0 0 64 64">
+                            <circle cx="32" cy="32" r="28" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M32 16v32M24 24h16c4.4 0 8 3.6 8 8s-3.6 8-8 8H20" stroke="currentColor" stroke-width="3" fill="none" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <div class="savings-text">
+                        <span class="savings-label">每年直接节省</span>
+                        <span class="savings-amount">$29,100</span>
+                    </div>
+                </div>
+                <div class="savings-breakdown">
+                    <div class="breakdown-item">
+                        <span class="breakdown-value">$2,425</span>
+                        <span class="breakdown-label">每月节省</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-value">$80</span>
+                        <span class="breakdown-label">每天节省</span>
+                    </div>
+                    <div class="breakdown-item">
+                        <span class="breakdown-value">$0.80</span>
+                        <span class="breakdown-label">每单节省</span>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Interactive ROI Calculator -->
+            <div class="roi-calculator" id="roiCalculator">
+                <h3 class="calculator-title">计算您的节省金额</h3>
+                <div class="calculator-inputs">
+                    <div class="input-group">
+                        <label>每日订单数</label>
+                        <div class="input-slider">
+                            <input type="range" id="ordersPerDay" min="30" max="200" value="100">
+                            <span class="slider-value" id="ordersValue">100 单</span>
+                        </div>
+                    </div>
+                    <div class="input-group">
+                        <label>当前月人工成本</label>
+                        <div class="input-slider">
+                            <input type="range" id="laborCost" min="2500" max="5000" value="3500" step="100">
+                            <span class="slider-value" id="laborValue">$3,500</span>
+                        </div>
+                    </div>
+                </div>
+                <div class="calculator-results">
+                    <div class="result-item">
+                        <span class="result-label">年度人工成本</span>
+                        <span class="result-value" id="annualLabor">$42,000</span>
+                    </div>
+                    <div class="result-item">
+                        <span class="result-label">AI 系统年费</span>
+                        <span class="result-value" id="annualAI">$14,400</span>
+                    </div>
+                    <div class="result-item highlight">
+                        <span class="result-label">您的年度节省</span>
+                        <span class="result-value" id="annualSavings">$27,600</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Market Section -->
+    <section class="market" id="market">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">市场机会</span>
+                <h2 class="section-title">专为中餐及亚洲餐厅打造</h2>
+                <p class="section-subtitle">被主流玩家忽视的高频刚需市场</p>
+            </div>
+
+            <div class="market-stats">
+                <div class="market-stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 48 48">
+                            <rect x="8" y="16" width="8" height="24" fill="currentColor" opacity="0.3"/>
+                            <rect x="20" y="12" width="8" height="28" fill="currentColor" opacity="0.5"/>
+                            <rect x="32" y="8" width="8" height="32" fill="currentColor"/>
+                        </svg>
+                    </div>
+                    <span class="stat-number">25,000-30,000</span>
+                    <span class="stat-desc">家中餐外送店</span>
+                    <span class="stat-note">美国核心目标市场</span>
+                </div>
+                <div class="market-stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 48 48">
+                            <circle cx="24" cy="24" r="18" stroke="currentColor" stroke-width="2" fill="none"/>
+                            <path d="M24 8v16l10 10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                        </svg>
+                    </div>
+                    <span class="stat-number">90,000+</span>
+                    <span class="stat-desc">家亚洲餐厅</span>
+                    <span class="stat-note">扩展市场潜力</span>
+                </div>
+                <div class="market-stat-card">
+                    <div class="stat-icon">
+                        <svg viewBox="0 0 48 48">
+                            <path d="M24 4l6 12h14l-10 10 4 14-14-8-14 8 4-14L4 16h14z" stroke="currentColor" stroke-width="2" fill="none"/>
+                        </svg>
+                    </div>
+                    <span class="stat-number">&lt;5%</span>
+                    <span class="stat-desc">当前渗透率</span>
+                    <span class="stat-note">巨大增长空间</span>
+                </div>
+            </div>
+
+            <div class="market-advantage">
+                <h3>为什么选择 Eamom？</h3>
+                <div class="advantage-grid">
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <svg viewBox="0 0 32 32">
+                                <circle cx="16" cy="16" r="14" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <text x="16" y="20" text-anchor="middle" font-size="10" fill="currentColor">中</text>
+                            </svg>
+                        </div>
+                        <h4>专注中餐场景</h4>
+                        <p>深度理解中餐菜单复杂度、中英混用点餐习惯</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <svg viewBox="0 0 32 32">
+                                <path d="M8 16c0-4.4 3.6-8 8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <path d="M4 16c0-6.6 5.4-12 12-12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                                <circle cx="16" cy="16" r="3" fill="currentColor"/>
+                                <path d="M16 24v4M12 28h8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h4>华人渠道优势</h4>
+                        <p>深耕华人社区，对接主流华人 POS 系统</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <svg viewBox="0 0 32 32">
+                                <rect x="4" y="8" width="24" height="16" rx="2" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M12 14l3 3 5-5" stroke="currentColor" stroke-width="2" stroke-linecap="round" fill="none"/>
+                            </svg>
+                        </div>
+                        <h4>即插即用</h4>
+                        <p>无需改动现有系统，7 天快速上线</p>
+                    </div>
+                    <div class="advantage-item">
+                        <div class="advantage-icon">
+                            <svg viewBox="0 0 32 32">
+                                <circle cx="16" cy="16" r="12" stroke="currentColor" stroke-width="2" fill="none"/>
+                                <path d="M16 10v6l4 4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+                            </svg>
+                        </div>
+                        <h4>持续优化</h4>
+                        <p>AI 不断学习，识别率和服务体验持续提升</p>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- FAQ Section -->
+    <section class="faq" id="faq">
+        <div class="container">
+            <div class="section-header">
+                <span class="section-tag">常见问题</span>
+                <h2 class="section-title">您可能关心的问题</h2>
+                <p class="section-subtitle">覆盖准确率、并发、集成与费用</p>
+            </div>
+
+            <div class="faq-list">
+                <details class="faq-item" open>
+                    <summary>
+                        <span>AI 会不会听错？如何保证下单准确？</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <p>支持门店专属菜单词表与话术微调；关键字段（菜品、规格、地址、备注）会做二次确认，并把结构化订单写入 POS / 平台，减少人工漏问与重复确认。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        <span>高峰期电话多，会不会占线或漏接？</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <p>支持多路并发与排队策略，可配置营业时间、节假日提示与公告；目标是让每一通来电都能被接起并引导完成下单。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        <span>怎么接入我们现在的电话和 POS？要改系统吗？</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <p>一般不需要改动现有流程：可通过转接或 SIP 方式绑定门店电话；并可对接主流华人 POS（如 Tiger / RestPOS）与外卖平台接口，自动落单。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        <span>试用多久？费用大概是什么范围？</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <p>提供 7–14 天免费试用（可选“只为成功订单付费”的方案）；正式上线后按门店/月订阅，常见区间约 $1,000–1,500/月，通常可替代 1 个全职接电话岗位成本的 50%+。</p>
+                    </div>
+                </details>
+
+                <details class="faq-item">
+                    <summary>
+                        <span>上线后有没有支持？能看到哪些数据？</span>
+                        <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M6 9l6 6 6-6"/>
+                        </svg>
+                    </summary>
+                    <div class="faq-content">
+                        <p>提供 7×12 小时在线支持；可查看通话量、接通率、订单量、替代人工时长等关键指标，用数据持续优化识别率与转化率。</p>
+                    </div>
+                </details>
+            </div>
+        </div>
+    </section>
+
+    <!-- CTA Section -->
+    <section class="cta-section" id="contact">
+        <div class="container">
+            <div class="cta-content">
+                <h2 class="cta-title">准备好让 AI 帮您接电话了吗？</h2>
+                <p class="cta-subtitle">免费试用 7-14 天，只为成功订单付费</p>
+
+                <div class="cta-form-container">
+                    <form class="contact-form" id="contactForm">
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="restaurantName">餐厅名称</label>
+                                <input type="text" id="restaurantName" placeholder="例如：金龙餐厅" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="contactName">联系人</label>
+                                <input type="text" id="contactName" placeholder="您的姓名" required>
+                            </div>
+                        </div>
+                        <div class="form-row">
+                            <div class="form-group">
+                                <label for="phone">电话号码</label>
+                                <input type="tel" id="phone" placeholder="+1 (xxx) xxx-xxxx" required>
+                            </div>
+                            <div class="form-group">
+                                <label for="location">所在城市</label>
+                                <select id="location" required>
+                                    <option value="">选择城市</option>
+                                    <option value="sf">旧金山湾区</option>
+                                    <option value="la">洛杉矶</option>
+                                    <option value="ny">纽约</option>
+                                    <option value="houston">休斯顿</option>
+                                    <option value="dallas">达拉斯</option>
+                                    <option value="seattle">西雅图</option>
+                                    <option value="chicago">芝加哥</option>
+                                    <option value="other">其他城市</option>
+                                </select>
+                            </div>
+                        </div>
+                        <div class="form-group full-width">
+                            <label for="message">其他信息（可选）</label>
+                            <textarea id="message" rows="3" placeholder="例如：每日订单量、使用的 POS 系统等"></textarea>
+                        </div>
+                        <button type="submit" class="btn btn-primary btn-large">
+                            <span>预约免费演示</span>
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M5 12h14M12 5l7 7-7 7"/>
+                            </svg>
+                        </button>
+                    </form>
+                </div>
+
+                <div class="contact-alternatives">
+                    <p>或直接联系我们</p>
+                    <div class="contact-methods">
+                        <a href="tel:+14158888888" class="contact-method">
+                            <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                                <path d="M22 16.92v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                            </svg>
+                            <span>+1 (415) 888-8888</span>
+                        </a>
+                        <button type="button" class="contact-method" data-copy="Eamom_AI" aria-label="复制微信号 Eamom_AI">
+                            <svg viewBox="0 0 24 24" fill="currentColor">
+                                <path d="M20.665 3.717l-17.73 6.837c-1.21.486-1.203 1.161-.222 1.462l4.552 1.42 10.532-6.645c.498-.303.953-.14.579.192l-8.533 7.701h-.002l.002.001-.314 4.692c.46 0 .663-.211.921-.46l2.211-2.15 4.599 3.397c.848.467 1.457.227 1.668-.787l3.019-14.228c.309-1.239-.473-1.8-1.282-1.432z"/>
+                            </svg>
+                            <span>微信: Eamom_AI</span>
+                        </button>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-brand">
+                    <div class="footer-logo">
+                        <img class="logo-img" src="iorder.png" alt="Eamom Voice AI Logo">
+                        <span>Eamom Voice AI</span>
+                    </div>
+                    <p>用 AI 语音自动接电话点餐<br>帮助餐厅省人、省时、增营收</p>
+                </div>
+                <div class="footer-links">
+                    <div class="footer-column">
+                        <h4>产品</h4>
+                        <a href="#solution">解决方案</a>
+                        <a href="#how-it-works">如何运作</a>
+                        <a href="#pricing">成本对比</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>资源</h4>
+                        <a href="#faq">常见问题</a>
+                        <a href="#market">市场机会</a>
+                        <a href="#contact">预约演示</a>
+                    </div>
+                    <div class="footer-column">
+                        <h4>联系</h4>
+                        <a href="tel:+14158888888">电话：+1 (415) 888-8888</a>
+                        <a href="#contact">微信：Eamom_AI</a>
+                    </div>
+                </div>
+            </div>
+            <div class="footer-bottom">
+                <p>&copy; 2025 Eamom Voice AI. All rights reserved.</p>
+                <p>San Francisco, California</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
