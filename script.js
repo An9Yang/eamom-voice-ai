@@ -234,6 +234,21 @@ function initScrollAnimations() {
         observer.observe(el);
     });
 
+    // Animate solution call flow once when visible
+    const flowContainer = document.querySelector('.flow-container');
+    if (flowContainer) {
+        const flowObserver = new IntersectionObserver((entries, obs) => {
+            entries.forEach(entry => {
+                if (entry.isIntersecting) {
+                    flowContainer.classList.add('is-animated');
+                    obs.unobserve(entry.target);
+                }
+            });
+        }, { threshold: 0.4 });
+
+        flowObserver.observe(flowContainer);
+    }
+
     // Animate timeline items
     const timelineItems = document.querySelectorAll('.timeline-item');
     timelineItems.forEach((item, index) => {
